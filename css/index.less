@@ -1,0 +1,115 @@
+@import "common";
+
+@baseFont: 50px; // 50作为fontsize 对应750的屏幕
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  width: 15rem;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, STHeiTi, sans-serif;
+  background: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  position: relative;
+  width: 15rem;
+
+  .hd-bg {
+    // 脱标
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15rem;
+    height: (180rem / @baseFont);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      bottom: 0; //保证渐变色最下面靠底边
+      width: 15rem;
+      height: 5.2rem;
+    }
+  }
+
+  .hd-bd {
+    position: relative; //不加这个是标准流, 会被压在背景下面
+    width: 15rem;
+
+    .bd-top {
+      display: flex;
+      align-items: center;
+      width: 13.64rem;
+      height: 1.76rem;
+      margin: 0 auto;
+      margin-top: .2rem;
+
+      .sort img,
+      .user img {
+        width: (36rem / @baseFont);
+        height: (60rem / @baseFont);
+      }
+
+      .center {
+        flex: 1;
+        text-align: center;
+
+        img {
+          width: (390rem / @baseFont);
+          height: (76rem / @baseFont);
+        }
+      }
+    }
+
+    .bd-bottom {
+      position: relative;
+      width: 15rem;
+      height: 1.84rem;
+      padding: 0 .48rem;
+      margin-top: .15rem;
+
+      a {
+        height: 1.76rem;
+        width: 100%;
+
+        .search-icon {
+          position: absolute;
+          top: .28rem;
+          left: .8rem;
+          width: (36rem / @baseFont);
+          height: (36rem / @baseFont);
+          background: url(../images/search.png);
+          background-size: (36rem / @baseFont) (36rem / @baseFont);
+        }
+
+        form {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          input {
+            width: 15rem;
+            height: (64rem / @baseFont);
+            border: none;
+            border-radius: (32rem / @baseFont);
+            font-size: .56rem;
+            color: #999999;
+            padding-left: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+}
